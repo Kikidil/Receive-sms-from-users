@@ -1,0 +1,2 @@
+SmsSubmitPdu pdu = new SmsSubmitPdu
+        ("hi,thank you for sending data to Green IT solutions".,txt_destination_numbers.Text,"");
