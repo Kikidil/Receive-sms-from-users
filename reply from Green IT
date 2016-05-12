@@ -1,0 +1,11 @@
+<?php
+  $msg = $_REQUEST['msg'];
+  $phone = $_REQUEST['phone'];
+  $user = lookup_user_by_phone($phone);  //
+  if ($user && $user->sms_allowed) {
+    $response = $user->process_sms_request($msg);
+    echo htmlentities($response);
+  } else {
+    echo "Error: Please activate SMS access on your account.";
+  }
+?>
